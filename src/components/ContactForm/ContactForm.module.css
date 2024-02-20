@@ -6,18 +6,16 @@
   width: 450px;
   height: 400px;
   padding: 20px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 
-  border: 1px solid #000;
   border-radius: 5px;
-  margin-bottom: 40px;
-  /* background-color: #c3adad; */
-  background-color: rgb(255, 255, 255, 0.4);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: rgb(255, 255, 255);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form:hover {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  transform: scale(1.01);
 }
 
 .field {
@@ -61,14 +59,12 @@
   /* background: rgba(0, 0, 0, 0.3); */
   background-color: #d3bdb0;
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover {
-  transform: scale(1.02);
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   /* background-color: rgb(189, 189, 189); */
   background-color: rgb(14, 13, 13);
 }

@@ -12,22 +12,19 @@
 
   width: 400px;
   font-weight: bold;
-  color: #fff;
-  /* transition: font-weight 150ms ease-in-out; */
+  color: #050505;
+  margin-bottom: 7px;
 }
-
-/* .label:focus-within {
-  font-weight: 600;
-} */
 
 input {
   width: 400px;
-  height: 40px;
+  height: 50px;
+  font-size: 18px;
+  padding: 15px;
   border-radius: 5px;
   /* background: rgba(0, 0, 0, 0.3); */
-  background-color: #fff;
-  border: none;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #e5e4e4bf;
+  border: 1px solid #bababa;
   border-radius: 4px;
 }
 
@@ -36,5 +33,6 @@ input {
 }
 
 .input:hover {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  transform: scale(1.01);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

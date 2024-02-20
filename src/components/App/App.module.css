@@ -1,8 +1,19 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.wrapForm {
+  background-color: #e7e6e6d8;
+  width: 100%;
+}
+
+.wrapContacts {
+  max-width: 1240px;
+  padding: 50px;
+  padding-top: 0;
 }
 
 .title {
@@ -13,4 +24,8 @@
   margin-bottom: 40px;
   -webkit-text-stroke: 1px #ffffff;
   text-stroke: 1px #ffffff;
+}
+
+.title:not(:last-child) {
+  padding-top: 50px;
 }

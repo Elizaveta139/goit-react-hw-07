@@ -10,6 +10,7 @@ import SearchBox from '../SearchBox/SearchBox';
 import ContactForm from '../ContactForm/ContactForm';
 
 import css from './App.module.css';
+import SectionContactForm from '../SectionContactForm/SectionContactForm';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -22,12 +23,18 @@ export default function App() {
 
   return (
     <Layout>
-      <h1 className={css.title}>Phonebook</h1>
-      <ContactForm />
-      {/* <h2 className={css.title}>Contacts</h2> */}
-      <SearchBox />
-      {isLoading && !error && <b>Request in progress...</b>}
-      <ContactList />
+      <div className={css.wrapForm}>
+        <h1 className={css.title}>Phonebook</h1>
+        <SectionContactForm />
+      </div>
+
+      <div className={css.wrapContacts}>
+        <h2 className={css.title}>Contacts</h2>
+        <SearchBox />
+        {isLoading && !error && <b>Request in progress...</b>}
+        <ContactList />
+      </div>
+
       <Toaster position="top-right" />
     </Layout>
   );
