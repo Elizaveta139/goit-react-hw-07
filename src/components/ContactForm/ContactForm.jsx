@@ -1,36 +1,52 @@
 import { useId } from 'react';
-import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
-import { nanoid } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts } from '../../redux/selectors';
+import { addContact } from '../../redux/operations';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 
 import css from './ContactForm.module.css';
 import { IoIosContact, IoIosCall, IoMdPersonAdd } from 'react-icons/io';
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required'),
-  number: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required'),
+  name: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('This field is requried'),
+  phone: Yup.number()
+    .min(6, 'Must be more than 6 digits')
+    .typeError('It doesn`t look like a phone number')
+    .required('This field is requried'),
 });
 
-const initialValues = { id: '', name: '', number: '' };
+const initialValues = { id: '', name: '', phone: '' };
 
 export default function ContactForm() {
   const nameFieldId = useId();
   const numberFieldId = useId();
 
   const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
-  function handleSubmit({ name, number }, actions) {
+  function handleSubmit({ name, phone }, actions) {
     const newContact = {
-      id: nanoid(5),
       name,
-      number,
+      phone,
     };
 
-    dispatch(addContact(newContact));
+    if (contacts.find(contact => contact.name === newContact.name)) {
+      actions.resetForm();
+      return toast.error(`${newContact.name} is already in contacts`);
+    }
+
+    dispatch(addContact({ name, phone }));
     actions.resetForm();
   }
+
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   const form = event.target;
+  //   dispatch(addContact(event.target.elements.text.value));
+  //   form.reset();
+  // };
 
   return (
     <Formik
@@ -53,8 +69,8 @@ export default function ContactForm() {
             <IoIosCall size="24" />
             Number
           </label>
-          <Field className={css.field} type="tel" name="number" id={numberFieldId} />
-          <ErrorMessage className={css.error} name="number" component="span" />
+          <Field className={css.field} type="tel" name="phone" id={numberFieldId} />
+          <ErrorMessage className={css.error} name="phone" component="span" />
         </div>
 
         <button className={css.btn} type="submit">

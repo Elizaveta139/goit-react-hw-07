@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getFilter } from '../../redux/selectors';
+import { selectFilter } from '../../redux/selectors';
 import { changeFilter } from '../../redux/filtersSlice';
 
 import css from './SearchBox.module.css';
@@ -7,7 +7,7 @@ import { IoIosSearch } from 'react-icons/io';
 
 export default function SearchBox() {
   const dispatch = useDispatch();
-  const value = useSelector(getFilter);
+  const value = useSelector(selectFilter);
 
   function handleChangeFilter(evt) {
     dispatch(changeFilter(evt.target.value));
