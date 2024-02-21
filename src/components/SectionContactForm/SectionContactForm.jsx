@@ -8,7 +8,7 @@ export default function SectionContactForm() {
     <div className={css.wrapForm}>
       <ContactForm />
 
-      <img className={css.img} src={img} alt="Phone in girl's hands" width="500" height="500" />
+      <img className={css.img} src={img} alt="Phone in girl's hands" width="550" height="550" />
     </div>
   );
 }
