@@ -4,13 +4,6 @@ import css from './ContactList.module.css';
 import Contact from '../Contact/Contact';
 
 export default function ContactList() {
-  // const contacts = useSelector(selectContacts);
-  // const filters = useSelector(selectFilter);
-
-  // const filteredContacts = contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(filters.name.toLowerCase())
-  // );
-
   const contacts = useSelector(selectVisibleContacts);
   return (
     <div className={css.wrap}>

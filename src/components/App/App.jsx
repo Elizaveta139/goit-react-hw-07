@@ -9,6 +9,7 @@ import ContactList from '../ContactList/ContactList';
 import SearchBox from '../SearchBox/SearchBox';
 import Loader from '../Loader/Loader';
 import SectionContactForm from '../SectionContactForm/SectionContactForm';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import css from './App.module.css';
 
@@ -32,6 +33,7 @@ export default function App() {
         <h2 className={css.title}>Contacts</h2>
         <SearchBox />
         {isLoading && !error && <Loader />}
+        {error && <ErrorMessage />}
         <ContactList />
       </div>
 

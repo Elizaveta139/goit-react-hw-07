@@ -6,9 +6,12 @@ import css from './SectionContactForm.module.css';
 export default function SectionContactForm() {
   return (
     <div className={css.wrapForm}>
-      <ContactForm />
+      <div className={css.adding}>
+        <p className={css.text}> Adding a Contact</p>
+        <ContactForm />
+      </div>
 
-      <img className={css.img} src={img} alt="Phone in girl's hands" width="550" height="550" />
+      <img className={css.img} src={img} alt="Phone in girl's hands" width="520" height="520" />
     </div>
   );
 }

@@ -38,6 +38,7 @@ export default function ContactForm() {
     }
 
     dispatch(addContact({ name, phone }));
+    toast.success(`Contact ${name} successfully added`);
     actions.resetForm();
   }
 

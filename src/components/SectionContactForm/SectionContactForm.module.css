@@ -6,6 +6,18 @@
   padding-bottom: 70px;
 }
 
+.adding {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.text {
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
 .img {
   object-fit: cover;
   border-radius: 50%;
