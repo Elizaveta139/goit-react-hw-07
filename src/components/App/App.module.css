@@ -12,8 +12,9 @@
 
 .wrapContacts {
   max-width: 1240px;
-  padding: 50px;
+  padding-bottom: 50px;
   padding-top: 0;
+  margin: 0 auto;
 }
 
 .title {

@@ -19,7 +19,7 @@ export default function SearchBox() {
   return (
     <div className={css.inputWrap}>
       <label className={css.label}>
-        <IoIosSearch size="24" />
+        <IoIosSearch size="26" />
         Find contacts by name
       </label>
       <input

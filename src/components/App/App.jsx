@@ -7,10 +7,10 @@ import { selectError, selectIsLoading } from '../../redux/selectors';
 import Layout from '../Layout/Layout';
 import ContactList from '../ContactList/ContactList';
 import SearchBox from '../SearchBox/SearchBox';
-import ContactForm from '../ContactForm/ContactForm';
+import Loader from '../Loader/Loader';
+import SectionContactForm from '../SectionContactForm/SectionContactForm';
 
 import css from './App.module.css';
-import SectionContactForm from '../SectionContactForm/SectionContactForm';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -24,14 +24,14 @@ export default function App() {
   return (
     <Layout>
       <div className={css.wrapForm}>
-        <h1 className={css.title}>Phonebook</h1>
+        <h1 className={css.title}>PHONEBOOK</h1>
         <SectionContactForm />
       </div>
 
       <div className={css.wrapContacts}>
         <h2 className={css.title}>Contacts</h2>
         <SearchBox />
-        {isLoading && !error && <b>Request in progress...</b>}
+        {isLoading && !error && <Loader />}
         <ContactList />
       </div>
 
