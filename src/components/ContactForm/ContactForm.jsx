@@ -11,9 +11,10 @@ import { IoIosContact, IoIosCall, IoMdPersonAdd } from 'react-icons/io';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('This field is requried'),
-  phone: Yup.number()
-    .min(6, 'Must be more than 6 digits')
-    .typeError('It doesn`t look like a phone number')
+  phone: Yup.string()
+    .matches(/^[0-9]+$/, 'Must be only digits')
+    .min(6, 'Must be at least 6 digits')
+    // .typeError('It doesn`t look like a phone number')
     .required('This field is requried'),
 });
 
