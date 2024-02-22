@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
+// import Fuse from 'fuse.js';
 import { selectFilter } from '../../redux/selectors';
 import { changeFilter } from '../../redux/filtersSlice';
+// import { selectVisibleContacts } from '../../redux/selectors';
 
 import css from './SearchBox.module.css';
 import { IoIosSearch } from 'react-icons/io';
@@ -9,12 +11,21 @@ export default function SearchBox() {
   const dispatch = useDispatch();
   const value = useSelector(selectFilter);
 
+  // const contacts = useSelector(selectVisibleContacts);
+
+  // const fuseOptions = {
+  //   keys: ['name', 'phone'],
+  // };
+
+  // const fuse = new Fuse(contacts, fuseOptions);
+  // const results = fuse.search(value);
+  // console.log('results', results);
+  // const result = results.map(result => result.item);
+  // console.log('hjhjh', result);
+
   function handleChangeFilter(evt) {
     dispatch(changeFilter(evt.target.value));
-    // console.log(changeFilter(evt.target.value));
   }
-
-  // console.log('value', value);
 
   return (
     <div className={css.inputWrap}>

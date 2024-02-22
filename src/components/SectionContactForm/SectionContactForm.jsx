@@ -7,7 +7,7 @@ export default function SectionContactForm() {
   return (
     <div className={css.wrapForm}>
       <div className={css.adding}>
-        <p className={css.text}> Adding a Contact</p>
+        <b className={css.text}> Adding a Contact</b>
         <ContactForm />
       </div>
 
